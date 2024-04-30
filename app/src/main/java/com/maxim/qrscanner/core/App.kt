@@ -3,7 +3,7 @@ package com.maxim.coremvvm.core
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import com.maxim.coremvvm.core.sl.ClearViewModel
-import com.maxim.coremvvm.core.sl.Core
+import com.maxim.qrscanner.core.sl.Core
 import com.maxim.qrscanner.core.sl.DependencyContainer
 import com.maxim.coremvvm.core.sl.ProvideViewModel
 import com.maxim.coremvvm.core.sl.ViewModelFactory

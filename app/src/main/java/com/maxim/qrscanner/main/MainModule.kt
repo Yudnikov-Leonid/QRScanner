@@ -1,6 +1,6 @@
 package com.maxim.coremvvm.main
 
-import com.maxim.coremvvm.core.sl.Core
+import com.maxim.qrscanner.core.sl.Core
 import com.maxim.coremvvm.core.sl.Module
 import com.maxim.qrscanner.main.MainViewModel
 

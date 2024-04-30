@@ -1,11 +1,13 @@
-package com.maxim.coremvvm.core.sl
+package com.maxim.qrscanner.core.sl
 
 import android.content.Context
 import com.maxim.coremvvm.core.data.ManageResource
 import com.maxim.coremvvm.core.data.SimpleStorage
 import com.maxim.coremvvm.core.presentation.Navigation
+import com.maxim.qrscanner.qr.data.ShareQrResult
 
-interface Core : ProvideManageResource, ProvideNavigation, ProvideSimpleStorage {
+interface Core : ProvideManageResource, ProvideNavigation, ProvideSimpleStorage,
+    ProvideShareQrResult {
 
     class Base(private val context: Context) : Core {
 
@@ -19,6 +21,9 @@ interface Core : ProvideManageResource, ProvideNavigation, ProvideSimpleStorage 
             SimpleStorage.Base(context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE))
 
         override fun simpleStorage() = simpleStorage
+
+        private val shareQrResult = ShareQrResult.Base()
+        override fun shareQrResult() = shareQrResult
 
         companion object {
             private const val STORAGE_NAME = "STORAGE"
@@ -36,4 +41,8 @@ interface ProvideNavigation {
 
 interface ProvideSimpleStorage {
     fun simpleStorage(): SimpleStorage
+}
+
+interface ProvideShareQrResult {
+    fun shareQrResult(): ShareQrResult.Mutable
 }

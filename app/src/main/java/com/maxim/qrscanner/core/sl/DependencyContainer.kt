@@ -2,7 +2,6 @@ package com.maxim.qrscanner.core.sl
 
 import androidx.lifecycle.ViewModel
 import com.maxim.coremvvm.core.sl.ClearViewModel
-import com.maxim.coremvvm.core.sl.Core
 import com.maxim.coremvvm.core.sl.Module
 import com.maxim.coremvvm.main.MainModule
 import com.maxim.qrscanner.main.MainViewModel

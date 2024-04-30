@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
@@ -34,8 +33,7 @@ class ScanFragment: BaseFragment<FragmentScanBinding, ScanViewModel>() {
 
         scanner.decodeCallback = DecodeCallback {
             GlobalScope.launch(Dispatchers.Main) {
-                Toast.makeText(requireContext(), "text: ${it.text}", Toast.LENGTH_LONG).show()
-                viewModel.decoded()
+                viewModel.decoded(it.text)
             }
         }
         scanner.startPreview()
