@@ -1,6 +1,7 @@
 package com.maxim.coremvvm.core.sl
 
 import androidx.lifecycle.ViewModel
+import com.maxim.qrscanner.core.sl.DependencyContainer
 
 interface ViewModelFactory : ProvideViewModel, ClearViewModel {
     class Base(

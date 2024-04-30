@@ -15,6 +15,10 @@ class QrFragment: BaseFragment<FragmentQrBinding, QrViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.takePhotoButton.setOnClickListener {
+            viewModel.scan()
+        }
+
         viewModel.observe(this) {
 
         }

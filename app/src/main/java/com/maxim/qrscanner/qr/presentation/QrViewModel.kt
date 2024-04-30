@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.maxim.coremvvm.core.presentation.Communication
 import com.maxim.coremvvm.core.presentation.Init
 import com.maxim.coremvvm.core.presentation.Navigation
+import com.maxim.qrscanner.scan.presentation.ScanScreen
 
 class QrViewModel(
     private val communication: QrCommunication,
@@ -13,7 +14,11 @@ class QrViewModel(
 ): ViewModel(), Communication.Observe<QrState>, Init {
 
     override fun init(isFirstRun: Boolean) {
-        TODO("Not yet implemented")
+
+    }
+
+    fun scan() {
+        navigation.update(ScanScreen)
     }
 
     override fun observe(owner: LifecycleOwner, observer: Observer<QrState>) {

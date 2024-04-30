@@ -3,8 +3,9 @@ package com.maxim.coremvvm.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
-import com.maxim.coremvvm.R
 import com.maxim.coremvvm.core.sl.ProvideViewModel
+import com.maxim.qrscanner.R
+import com.maxim.qrscanner.main.MainViewModel
 
 class MainActivity : AppCompatActivity(), ProvideViewModel {
 
