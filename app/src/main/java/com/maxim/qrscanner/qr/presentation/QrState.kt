@@ -10,6 +10,13 @@ import com.google.zxing.qrcode.QRCodeWriter
 interface QrState {
     fun show(resultTextView: TextView, qrImageView: ImageView)
 
+    object Initial: QrState{
+        override fun show(resultTextView: TextView, qrImageView: ImageView) {
+            qrImageView.setImageBitmap(null)
+            resultTextView.text = ""
+        }
+    }
+
     class Base(private val text: String): QrState {
         override fun show(resultTextView: TextView, qrImageView: ImageView) {
             resultTextView.text = text

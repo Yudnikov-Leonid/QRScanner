@@ -24,6 +24,10 @@ class QrViewModel(
         communication.update(QrState.Base(shareQrResult.read()))
     }
 
+    fun clear() {
+        communication.update(QrState.Initial)
+    }
+
     fun scan() {
         navigation.update(ScanScreen)
     }

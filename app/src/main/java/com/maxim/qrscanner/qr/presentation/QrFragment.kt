@@ -19,6 +19,10 @@ class QrFragment: BaseFragment<FragmentQrBinding, QrViewModel>() {
             viewModel.scan()
         }
 
+        binding.clearButton.setOnClickListener {
+            viewModel.clear()
+        }
+
         viewModel.observe(this) {
             it.show(binding.contentTextView, binding.qrImageView)
         }
