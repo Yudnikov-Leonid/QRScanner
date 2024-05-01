@@ -20,7 +20,7 @@ class QrFragment: BaseFragment<FragmentQrBinding, QrViewModel>() {
         }
 
         viewModel.observe(this) {
-            it.show(binding.contentTextView)
+            it.show(binding.contentTextView, binding.qrImageView)
         }
 
         viewModel.init(savedInstanceState == null)
