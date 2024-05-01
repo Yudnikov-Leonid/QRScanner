@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
+import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import com.maxim.coremvvm.core.presentation.BaseFragment
 import com.maxim.qrscanner.databinding.FragmentScanBinding
@@ -34,6 +36,12 @@ class ScanFragment: BaseFragment<FragmentScanBinding, ScanViewModel>() {
         scanner.decodeCallback = DecodeCallback {
             GlobalScope.launch(Dispatchers.Main) {
                 viewModel.decoded(it.text)
+            }
+        }
+        scanner.errorCallback = ErrorCallback {
+            GlobalScope.launch(Dispatchers.Main) {
+                viewModel.decoded("")
+                Toast.makeText(requireContext(), "error", Toast.LENGTH_LONG).show()
             }
         }
         scanner.startPreview()
